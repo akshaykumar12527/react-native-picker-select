@@ -313,13 +313,13 @@ export default class RNPickerSelect extends PureComponent {
     }
 
     renderIcon() {
-        const { hideIcon, style } = this.props;
+        const { hideIcon, customIcon, style } = this.props;
 
         if (hideIcon) {
             return null;
         }
 
-        return <View testID="icon_ios" style={[defaultStyles.icon, style.icon]} />;
+        return customIcon ? customIcon : <View testID="icon_ios" style={[defaultStyles.icon, style.icon]} />;
     }
 
     renderTextInputOrChildren() {
